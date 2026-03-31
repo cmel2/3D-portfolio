@@ -6,24 +6,27 @@
     return;
   }
 
-  const statsRoot = document.querySelector("#hero-stats");
-  const posterTrack = document.querySelector("#poster-track");
+  const metaRoot = document.querySelector("#portfolio-meta");
   const aboutFocus = document.querySelector("#about-focus");
   const portfolioSections = document.querySelector("#portfolio-sections");
+  const softwareGrid = document.querySelector("#software-grid");
   const footerTools = document.querySelector("#footer-tools");
 
-  portfolioRenderer.renderHeroStats(statsRoot, portfolioData.siteMeta.stats);
+  portfolioRenderer.renderPortfolioMeta(metaRoot, portfolioData.projectYears);
   portfolioRenderer.renderFocusAreas(
     aboutFocus,
     portfolioData.siteMeta.focusAreas,
   );
-  portfolioRenderer.renderPosterRail(posterTrack, portfolioData.projectYears);
   portfolioRenderer.renderYearSections(
     portfolioSections,
     portfolioData.projectYears,
   );
+  portfolioRenderer.renderSoftware(
+    softwareGrid,
+    portfolioData.siteMeta.software,
+  );
   portfolioRenderer.renderToolset(footerTools, portfolioData.projectYears);
 
-  window.setupMarquee(document.querySelector("[data-marquee]"));
+  window.setupMediaExperience();
   window.setupRevealOnScroll(document.querySelectorAll("[data-reveal]"));
 })();

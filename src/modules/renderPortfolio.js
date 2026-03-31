@@ -3,29 +3,132 @@
 
   const assetUrl = (path) => encodeURI(path);
 
+  const renderMediaTrigger = (config) => {
+    const className = ["media-trigger", config.className || ""]
+      .filter(Boolean)
+      .join(" ");
+
+    return `
+    <button
+      class="${className}"
+      type="button"
+      data-media-trigger
+      data-media-type="${config.type}"
+      data-media-src="${assetUrl(config.src)}"
+      data-media-alt="${config.alt}"
+      data-media-title="${config.title}"
+      aria-label="${config.buttonLabel}"
+    >
+      ${config.content}
+      <span class="media-trigger__hint">${config.hint}</span>
+    </button>
+  `;
+  };
+
   const renderMedia = (media, title) => {
     if (media.type === "image") {
-      return `
-        <img
-          src="${assetUrl(media.src)}"
-          alt="${media.alt || title}"
-          loading="lazy"
-        >
-      `;
+      return renderMediaTrigger({
+        type: "image",
+        src: media.src,
+        alt: media.alt || title,
+        title,
+        buttonLabel: `${title} größer anzeigen`,
+        hint: "Bild öffnen",
+        content: `
+          <img
+            src="${assetUrl(media.src)}"
+            alt="${media.alt || title}"
+            loading="lazy"
+          >
+        `,
+      });
     }
 
     if (media.type === "video") {
+      return renderMediaTrigger({
+        type: "video",
+        src: media.src,
+        alt: media.alt || title,
+        title,
+        className: "media-trigger--video",
+        buttonLabel: `${title} als Video öffnen`,
+        hint: "Video öffnen",
+        content: `
+          <video
+            src="${assetUrl(media.src)}"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="${media.alt || title}"
+          ></video>
+        `,
+      });
+    }
+
+    if (media.type === "gallery") {
       return `
-        <video
-          src="${assetUrl(media.src)}"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          controls
-          aria-label="${media.alt || title}"
-        ></video>
+        <div class="gallery" data-gallery>
+          <div class="gallery__viewport">
+            ${media.items
+              .map((item, index) =>
+                renderMediaTrigger({
+                  type: item.type,
+                  src: item.src,
+                  alt: item.alt || title,
+                  title,
+                  className: `gallery__slide${index === 0 ? " is-active" : ""}`,
+                  buttonLabel: `${title} Bild ${index + 1} größer anzeigen`,
+                  hint: "Bild öffnen",
+                  content: `
+                    <img
+                      src="${assetUrl(item.src)}"
+                      alt="${item.alt || title}"
+                      loading="${index === 0 ? "eager" : "lazy"}"
+                    >
+                  `,
+                }),
+              )
+              .join("")}
+          </div>
+
+          <div class="gallery__footer">
+            <div class="gallery__dots">
+              ${media.items
+                .map(
+                  (_, index) => `
+                    <button
+                      class="gallery__dot${index === 0 ? " is-active" : ""}"
+                      type="button"
+                      data-gallery-dot
+                      data-gallery-index="${index}"
+                      aria-label="Zu Bild ${index + 1} wechseln"
+                    ></button>
+                  `,
+                )
+                .join("")}
+            </div>
+            <div class="gallery__nav">
+              <button
+                class="gallery__button"
+                type="button"
+                data-gallery-prev
+                aria-label="Vorheriges Bild"
+              >
+                ‹
+              </button>
+              <button
+                class="gallery__button"
+                type="button"
+                data-gallery-next
+                aria-label="Nächstes Bild"
+              >
+                ›
+              </button>
+            </div>
+          </div>
+        </div>
       `;
     }
 
@@ -38,44 +141,6 @@
           ${media.actionLabel || "Datei herunterladen"}
         </a>
       </div>
-    `;
-  };
-
-  const renderPosterCard = (work, year) => {
-    const posterClass =
-      work.media.type === "image"
-        ? "poster-card"
-        : "poster-card poster-card--text";
-
-    const posterVisual =
-      work.media.type === "image"
-        ? `
-          <div class="poster-card__media">
-            <img src="${assetUrl(work.media.src)}" alt="${work.media.alt || work.title}" loading="lazy">
-          </div>
-        `
-        : `
-          <div class="poster-card__placeholder">
-            <span class="poster-card__pill">${work.category}</span>
-            <strong>${work.title}</strong>
-            <p>${year.label}</p>
-          </div>
-        `;
-
-    return `
-      <a
-        class="${posterClass}"
-        href="#${work.id}"
-        style="--poster-accent: ${year.accent};"
-        aria-label="${work.title} in ${year.label} ansehen"
-      >
-        ${posterVisual}
-        <div class="poster-card__body">
-          <p class="poster-card__year">${year.label}</p>
-          <h3>${work.title}</h3>
-          <p>${work.category}</p>
-        </div>
-      </a>
     `;
   };
 
@@ -99,17 +164,35 @@
     `;
   };
 
-  const renderHeroStats = (root, stats) => {
+  const renderPortfolioMeta = (root, years) => {
     if (!root) {
       return;
     }
 
-    root.innerHTML = stats
+    const works = years.flatMap((year) => year.works);
+    const meta = [
+      { value: "3.-5.", label: "Jahrgang am TGM" },
+      { value: String(works.length), label: "Arbeiten" },
+      {
+        value: String(
+          works.filter((work) => work.media.type === "video").length,
+        ),
+        label: "Videoclips",
+      },
+      {
+        value: String(
+          works.filter((work) => work.media.type === "file").length,
+        ),
+        label: "OBJ-Downloads",
+      },
+    ];
+
+    root.innerHTML = meta
       .map(
-        (stat) => `
-          <article class="stat-card">
-            <span class="stat-card__value">${stat.value}</span>
-            <span class="stat-card__label">${stat.label}</span>
+        (item) => `
+          <article class="meta-card">
+            <span class="meta-card__value">${item.value}</span>
+            <span class="meta-card__label">${item.label}</span>
           </article>
         `,
       )
@@ -124,18 +207,35 @@
     root.innerHTML = focusAreas.map(renderChip).join("");
   };
 
-  const renderPosterRail = (root, years) => {
+  const renderSoftware = (root, software) => {
     if (!root) {
       return;
     }
 
-    const cards = years.flatMap((year) =>
-      year.works
-        .filter((work) => work.media.type !== "file")
-        .map((work) => renderPosterCard(work, year)),
-    );
-
-    root.innerHTML = cards.join("");
+    root.innerHTML = software
+      .map(
+        (item) => `
+          <article
+            class="software-card panel"
+            data-reveal
+            style="--software-accent: ${item.accent};"
+          >
+            <div class="software-card__logo">
+              ${
+                item.logo.type === "image"
+                  ? `<img src="${item.logo.src}" alt="${item.name} Logo" loading="lazy">`
+                  : `<span>${item.logo.text}</span>`
+              }
+            </div>
+            <div class="software-card__body">
+              <p class="panel__eyebrow">${item.vendor}</p>
+              <h3>${item.name}</h3>
+              <p>${item.description}</p>
+            </div>
+          </article>
+        `,
+      )
+      .join("");
   };
 
   const renderYearSections = (root, years) => {
@@ -184,8 +284,8 @@
 
   window.PortfolioRenderer = {
     renderFocusAreas,
-    renderHeroStats,
-    renderPosterRail,
+    renderPortfolioMeta,
+    renderSoftware,
     renderToolset,
     renderYearSections,
   };

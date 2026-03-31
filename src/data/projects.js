@@ -12,11 +12,47 @@ const siteMeta = {
     "Lookdev",
     "Environment Design",
   ],
-  stats: [
-    { value: "15", label: "Arbeiten und Studien" },
-    { value: "6", label: "Animationsclips" },
-    { value: "3", label: "Ausbildungsjahre" },
-    { value: "1", label: "OBJ-Modell zum Download" },
+  software: [
+    {
+      name: "Autodesk Maya",
+      vendor: "3D Suite",
+      description: "Modelling, Rigging, Animation, Simulation und Rendering.",
+      accent: "#37a5cc",
+      logo: {
+        type: "image",
+        src: "https://cdn.simpleicons.org/autodeskmaya/37A5CC",
+      },
+    },
+    {
+      name: "After Effects",
+      vendor: "Motion Design",
+      description: "Compositing, Motion-Tests und kurze Postproduktionsschritte.",
+      accent: "#9999ff",
+      logo: {
+        type: "monogram",
+        text: "Ae",
+      },
+    },
+    {
+      name: "Blender",
+      vendor: "3D Toolset",
+      description: "Zusätzliche 3D-Studien, Szenenbau und experimentelle Looks.",
+      accent: "#f5792a",
+      logo: {
+        type: "image",
+        src: "https://cdn.simpleicons.org/blender/F5792A",
+      },
+    },
+    {
+      name: "Tinkercad 3D",
+      vendor: "Basics & Prototyping",
+      description: "Frühe Formstudien, einfache Konstruktionen und OBJ-Export.",
+      accent: "#1477d1",
+      logo: {
+        type: "image",
+        src: "https://cdn.simpleicons.org/tinkercad/1477D1",
+      },
+    },
   ],
 };
 
@@ -24,11 +60,11 @@ const projectYears = [
   {
     id: "year-3",
     yearNumber: "03",
-    label: "3. Jahr",
+    label: "3. Jahrgang",
     title: "Grundlagen in Form, Material und UV-Verständnis",
     accent: "#cf6c37",
     summary:
-      "Frühe Arbeiten mit Fokus auf Modellierung, Materialtests und klar lesbare Renderings. Die Projekte zeigen Grundlagenarbeit, aber bereits ein Gefühl für Licht, Kontrast und Präsentation.",
+      "Im 3. Jahrgang am TGM stehen Modellierung, Materialtests und klar lesbare Renderings im Vordergrund. Die Arbeiten zeigen technische Grundlagen, aber bereits ein Gespür für Licht, Kontrast und Präsentation.",
     skills: ["Tinkercad", "Modelling", "UV Mapping", "Shading"],
     works: [
       {
@@ -103,39 +139,37 @@ const projectYears = [
   {
     id: "year-4",
     yearNumber: "04",
-    label: "4. Jahr",
+    label: "4. Jahrgang",
     title: "Bewegung, Charactertechnik und Simulation",
     accent: "#8ea9bf",
     summary:
-      "Im 4. Jahr verschiebt sich der Fokus von statischen Objekten zu animierten Abläufen. Rigging, Facial Animation und nCloth zeigen ein deutlich technischer werdendes Interesse.",
+      "Im 4. Jahrgang am TGM verschiebt sich der Fokus von statischen Objekten zu animierten Abläufen. Rigging, Facial Animation und nCloth zeigen ein deutlich technischer werdendes Interesse.",
     skills: ["Rigging", "Facial Animation", "nCloth", "Rendering"],
     works: [
       {
-        id: "lightsaber-render-01",
-        title: "Lichtschwert Render 01",
+        id: "lightsaber-study",
+        title: "Lichtschwert Studie",
         category: "Lighting",
         description:
-          "Ein kontrollierter Material- und Lichttest, bei dem das Leuchtelement die komplette Komposition und die Reflexionen im Raum bestimmt.",
+          "Zwei Renderansichten einer gemeinsamen Licht- und Materialstudie. Das Leuchtelement bestimmt die gesamte Komposition, während Perspektive, Reflexionen und Blickführung variiert werden.",
         media: {
-          type: "image",
-          src: "./4th year/El Shal_Mohamed_Lichtschwert_Render01.png",
-          alt: "3D-Rendering eines Lichtschwerts mit roter Leuchtklinge",
+          type: "gallery",
+          alt: "Lichtschwert-Studie mit zwei Renderansichten",
+          items: [
+            {
+              type: "image",
+              src: "./4th year/El Shal_Mohamed_Lichtschwert_Render01.png",
+              alt: "Erste Lichtschwert-Ansicht mit roter Leuchtklinge",
+            },
+            {
+              type: "image",
+              src: "./4th year/El Shal_Mohamed_Lichtschwert_Render02.png",
+              alt: "Zweite Lichtschwert-Ansicht mit angepasster Perspektive",
+            },
+          ],
         },
-        tags: ["Lighting", "Rendering", "Glow"],
+        tags: ["Lighting", "Rendering", "Materials", "Series"],
         featured: true,
-      },
-      {
-        id: "lightsaber-render-02",
-        title: "Lichtschwert Render 02",
-        category: "Variation",
-        description:
-          "Zweite Render-Variante derselben Szene mit angepasster Blickführung und verändertem Verhältnis zwischen Objekt und Umgebung.",
-        media: {
-          type: "image",
-          src: "./4th year/El Shal_Mohamed_Lichtschwert_Render02.png",
-          alt: "Alternative Perspektive des Lichtschwert-Renderings",
-        },
-        tags: ["Camera", "Materials", "Presentation"],
       },
       {
         id: "rig-demo",
@@ -181,11 +215,11 @@ const projectYears = [
   {
     id: "year-5",
     yearNumber: "05",
-    label: "5. Jahr",
+    label: "5. Jahrgang",
     title: "Atmosphäre, Environment und ausgereiftere Inszenierung",
     accent: "#786b59",
     summary:
-      "Das 5. Jahr erweitert die technische Basis um stärkere Stimmung, klarere Szenografie und spezifischere Werkzeuge wie XGen. Viele Arbeiten setzen stärker auf cineastische Beleuchtung und räumliche Tiefe.",
+      "Der 5. Jahrgang am TGM erweitert die technische Basis um stärkere Stimmung, klarere Szenografie und spezifischere Werkzeuge wie XGen. Viele Arbeiten setzen stärker auf cineastische Beleuchtung und räumliche Tiefe.",
     skills: ["Environment", "XGen", "HDRI", "Lookdev"],
     works: [
       {

@@ -31,73 +31,60 @@
         <a class="site-brand" href="#top">Mohamed El Shal</a>
         <nav class="site-nav" aria-label="Hauptnavigation">
           <a href="#portfolio">Arbeiten</a>
-          <a href="#about">Profil</a>
-          <a href="#skills">Skills</a>
+          <a href="#about">TGM</a>
+          <a href="#skills">Software</a>
         </nav>
       </header>
 
       <main id="top">
-        <section class="hero section">
-          <div class="hero__copy" data-reveal>
-            <p class="hero__eyebrow">3D Portfolio 2023 bis 2026</p>
-            <h1 class="hero__title">
-              Digitale Szenen, Materialien und Bewegung mit Fokus auf
-              Atmosphäre.
-            </h1>
-            <p class="hero__intro">
-              Dieses Portfolio bündelt Arbeiten aus dem 3., 4. und 5.
-              Ausbildungsjahr: von Modellierung und UV-Mapping über Rigging und
-              Simulation bis hin zu ausgeleuchteten Environment- und Lookdev-
-              Studien.
-            </p>
-            <div class="hero__actions">
-              <a class="button button--primary" href="#portfolio"
-                >Portfolio ansehen</a
-              >
-              <a class="button button--ghost" href="#about">Über das Profil</a>
+        <section class="about section" id="portfolio">
+          <div class="portfolio__intro panel" data-reveal>
+            <div class="portfolio__intro-copy">
+              <p class="section-head__eyebrow">3. bis 5. Jahrgang am TGM</p>
+              <h1>
+                Arbeiten aus Modellierung, Rigging, Simulation und Environment
+                Design.
+              </h1>
+              <p>
+                Dieses Portfolio sammelt Projekte aus dem 3. bis 5. Jahrgang am
+                TGM und zeigt die Entwicklung von technischen Grundlagen bis zu
+                atmosphärischeren 3D-Szenen.
+              </p>
+              <div class="portfolio__meta" id="portfolio-meta"></div>
             </div>
+
+            <aside class="tgm-badge">
+              <img src="./TGM_Logo.png" alt="TGM Logo">
+              <div>
+                <p class="panel__eyebrow">TGM Wien</p>
+                <p>Medientechnik · 3D</p>
+              </div>
+            </aside>
           </div>
 
-          <aside class="hero__aside panel" data-reveal>
-            <p class="hero__label">Momentaufnahme</p>
-            <div id="hero-stats" class="stats-grid"></div>
-          </aside>
-        </section>
-
-        <section class="poster-section section" aria-labelledby="showcase-title">
-          <div class="section-head" data-reveal>
-            <p class="section-head__eyebrow">Projektband</p>
-            <h2 id="showcase-title">Ein horizontaler Schnelldurchlauf durch die wichtigsten Arbeiten.</h2>
-            <p>
-              Die Leichtigkeit der Referenzseite wird hier in eine 3D-Sprache
-              übersetzt: helle Flächen, große Typografie und posterartige
-              Projektkarten mit ruhigem, endlosem Lauf.
-            </p>
-          </div>
-
-          <div class="poster-rail" data-marquee>
-            <div
-              class="poster-rail__track"
-              id="poster-track"
-              data-marquee-track
-            ></div>
-          </div>
+          <div class="year-stack" id="portfolio-sections"></div>
         </section>
 
         <section class="about section" id="about">
           <div class="section-head" data-reveal>
-            <p class="section-head__eyebrow">Profil</p>
-            <h2>Vom Grundlagenjahr zur atmosphärischen Szene.</h2>
+            <p class="section-head__eyebrow">Kontext</p>
+            <h2>Vom 3. bis 5. Jahrgang am TGM.</h2>
+            <p>
+              Die Arbeiten folgen einer klaren Entwicklung innerhalb der
+              Ausbildung am TGM: zuerst Grundlagen in Form, Material und UVs,
+              dann technische Character- und Simulationsaufgaben und zuletzt
+              stärker inszenierte Licht- und Environment-Arbeiten.
+            </p>
           </div>
 
           <div class="about__layout">
             <article class="panel about__text" data-reveal>
               <p>
-                Die Auswahl ist als Entwicklungslinie aufgebaut. Im 3. Jahr
-                stehen Form, saubere Meshes und Materialverständnis im
-                Vordergrund. Im 4. Jahr kommen Bewegung, Facial Animation und
-                Stoffsimulation dazu. Das 5. Jahr konzentriert sich auf
-                Stimmung, Licht und klarere Art Direction.
+                Im 3. Jahrgang am TGM stehen saubere Meshes, Materialverständnis
+                und technische Grundlagen im Vordergrund. Im 4. Jahrgang kommen
+                Rigging, Facial Animation und Stoffsimulation dazu. Der 5.
+                Jahrgang verschiebt den Fokus stärker auf Stimmung, Licht,
+                Environment Design und eine klarere visuelle Inszenierung.
               </p>
               <p>
                 Gestalterisch orientiert sich die Seite an der reduzierten,
@@ -120,45 +107,54 @@
           </div>
         </section>
 
-        <section class="portfolio section" id="portfolio">
-          <div class="section-head" data-reveal>
-            <p class="section-head__eyebrow">Jahrgänge</p>
-            <h2>Drei Jahre, drei Schwerpunkte, ein zusammenhängender Lernweg.</h2>
-            <p>
-              Jede Sektion fasst die wichtigsten Arbeiten des jeweiligen
-              Ausbildungsjahres zusammen und mischt Stills, kurze Clips und
-              technische Studien.
-            </p>
-          </div>
-
-          <div class="year-stack" id="portfolio-sections"></div>
-        </section>
-
         <section class="toolset section" id="skills">
           <div class="section-head" data-reveal>
-            <p class="section-head__eyebrow">Skills</p>
-            <h2>Werkzeuge, Themenfelder und technische Schwerpunkte.</h2>
+            <p class="section-head__eyebrow">Software</p>
+            <h2>Software und Workflow der gezeigten Arbeiten.</h2>
+            <p>
+              Die folgenden Programme bilden den Kern des gezeigten Workflows
+              zwischen Modellierung, Animation, Motion-Design und Prototyping.
+            </p>
           </div>
 
+          <div class="software-grid" id="software-grid"></div>
+
           <article class="panel toolset__panel" data-reveal>
-            <p>
-              Die folgenden Begriffe werden direkt aus den Projekt-Tags
-              generiert und zeigen die Breite der gezeigten Arbeiten.
-            </p>
+            <p class="panel__eyebrow">Thematische Schwerpunkte</p>
             <div class="chip-cloud chip-cloud--large" id="footer-tools"></div>
           </article>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>Portfolio mit Assets aus dem 3., 4. und 5. Ausbildungsjahr.</p>
+        <p>Portfolio mit Arbeiten aus dem 3. bis 5. Jahrgang am TGM.</p>
         <a href="#top">Zurück nach oben</a>
       </footer>
     </div>
 
+    <div class="media-modal" id="media-modal" hidden>
+      <div class="media-modal__backdrop" data-media-close></div>
+      <div
+        class="media-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="media-modal-title"
+      >
+        <button
+          class="media-modal__close"
+          type="button"
+          data-media-close
+          aria-label="Medienansicht schließen"
+        >
+          ×
+        </button>
+        <div class="media-modal__body" id="media-modal-content"></div>
+      </div>
+    </div>
+
     <script defer src="./src/data/projects.js"></script>
     <script defer src="./src/modules/renderPortfolio.js"></script>
-    <script defer src="./src/modules/marquee.js"></script>
+    <script defer src="./src/modules/mediaExperience.js"></script>
     <script defer src="./src/modules/revealOnScroll.js"></script>
     <script defer src="./src/main.js"></script>
   </body>

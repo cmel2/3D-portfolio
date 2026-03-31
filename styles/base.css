@@ -38,6 +38,10 @@ body {
   overflow-x: hidden;
 }
 
+body.has-modal {
+  overflow: hidden;
+}
+
 body::before {
   content: "";
   position: fixed;
