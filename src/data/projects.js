@@ -1,0 +1,303 @@
+const siteMeta = {
+  name: "Mohamed El Shal",
+  role: "3D Artist, Lookdev und Technical Design",
+  focusAreas: [
+    "Modelling",
+    "UV & Texturing",
+    "Shading",
+    "Rigging",
+    "Facial Animation",
+    "Simulation",
+    "Lighting",
+    "Lookdev",
+    "Environment Design",
+  ],
+  stats: [
+    { value: "15", label: "Arbeiten und Studien" },
+    { value: "6", label: "Animationsclips" },
+    { value: "3", label: "Ausbildungsjahre" },
+    { value: "1", label: "OBJ-Modell zum Download" },
+  ],
+};
+
+const projectYears = [
+  {
+    id: "year-3",
+    yearNumber: "03",
+    label: "3. Jahr",
+    title: "Grundlagen in Form, Material und UV-Verständnis",
+    accent: "#cf6c37",
+    summary:
+      "Frühe Arbeiten mit Fokus auf Modellierung, Materialtests und klar lesbare Renderings. Die Projekte zeigen Grundlagenarbeit, aber bereits ein Gefühl für Licht, Kontrast und Präsentation.",
+    skills: ["Tinkercad", "Modelling", "UV Mapping", "Shading"],
+    works: [
+      {
+        id: "chessboard-study",
+        title: "Schachbrett-Studie",
+        category: "Rendering",
+        description:
+          "Eine frühe Licht- und Materialübung mit spiegelnden Figuren, dunklem Raum und starkem Farbkontrast zwischen warmem Rot und kaltem Blau.",
+        media: {
+          type: "image",
+          src: "./3th year/Chessboard.png",
+          alt: "Schachbrett mit roten und blauen Schachfiguren",
+        },
+        tags: ["Lighting", "Materials", "Composition"],
+        featured: true,
+      },
+      {
+        id: "robot-shading",
+        title: "Robot Shading",
+        category: "Lookdev",
+        description:
+          "Studie zu Oberflächenverhalten, Reflexionen und einem besser kontrollierten Zusammenspiel von Shadern und Licht.",
+        media: {
+          type: "image",
+          src: "./3th year/Robot_Shading.png",
+          alt: "Roboter-Rendering mit betonten Materialien",
+        },
+        tags: ["Shading", "Lookdev", "Materials"],
+      },
+      {
+        id: "uv-mapping-practice",
+        title: "UV-Mapping Übung",
+        category: "Technik",
+        description:
+          "Technische Übung zum sauberen Auftrennen, Ordnen und Weiterverarbeiten von UVs als Grundlage für glaubwürdige Texturen.",
+        media: {
+          type: "image",
+          src: "./3th year/UV_Mapping_Practice.png",
+          alt: "Technische UV-Mapping Übung",
+        },
+        tags: ["UV Mapping", "Texturing", "Workflow"],
+      },
+      {
+        id: "tennis-racket",
+        title: "Tennisschläger",
+        category: "Hard Surface",
+        description:
+          "Modellierungsstudie mit klarer Silhouette, einfachen Materialien und Fokus auf Formkontrolle bei industriellen Objekten.",
+        media: {
+          type: "image",
+          src: "./3th year/Tennis_racket.png",
+          alt: "3D-Rendering eines Tennisschlägers",
+        },
+        tags: ["Hard Surface", "Modelling", "Presentation"],
+      },
+      {
+        id: "chesspiece-obj",
+        title: "Schachfigur aus Tinkercad",
+        category: "3D-Modell",
+        description:
+          "Exportierte Grundform als OBJ-Datei. Die Arbeit ergänzt das Schach-Projekt um eine direkt nachvollziehbare Modellbasis.",
+        media: {
+          type: "file",
+          src: "./3th year/Chesspiece_Tinkercad.obj",
+          alt: "OBJ-Datei einer Schachfigur aus Tinkercad",
+          actionLabel: "OBJ herunterladen",
+        },
+        tags: ["OBJ", "Tinkercad", "Base Mesh"],
+      },
+    ],
+  },
+  {
+    id: "year-4",
+    yearNumber: "04",
+    label: "4. Jahr",
+    title: "Bewegung, Charactertechnik und Simulation",
+    accent: "#8ea9bf",
+    summary:
+      "Im 4. Jahr verschiebt sich der Fokus von statischen Objekten zu animierten Abläufen. Rigging, Facial Animation und nCloth zeigen ein deutlich technischer werdendes Interesse.",
+    skills: ["Rigging", "Facial Animation", "nCloth", "Rendering"],
+    works: [
+      {
+        id: "lightsaber-render-01",
+        title: "Lichtschwert Render 01",
+        category: "Lighting",
+        description:
+          "Ein kontrollierter Material- und Lichttest, bei dem das Leuchtelement die komplette Komposition und die Reflexionen im Raum bestimmt.",
+        media: {
+          type: "image",
+          src: "./4th year/El Shal_Mohamed_Lichtschwert_Render01.png",
+          alt: "3D-Rendering eines Lichtschwerts mit roter Leuchtklinge",
+        },
+        tags: ["Lighting", "Rendering", "Glow"],
+        featured: true,
+      },
+      {
+        id: "lightsaber-render-02",
+        title: "Lichtschwert Render 02",
+        category: "Variation",
+        description:
+          "Zweite Render-Variante derselben Szene mit angepasster Blickführung und verändertem Verhältnis zwischen Objekt und Umgebung.",
+        media: {
+          type: "image",
+          src: "./4th year/El Shal_Mohamed_Lichtschwert_Render02.png",
+          alt: "Alternative Perspektive des Lichtschwert-Renderings",
+        },
+        tags: ["Camera", "Materials", "Presentation"],
+      },
+      {
+        id: "rig-demo",
+        title: "Rigging Demo",
+        category: "Animation",
+        description:
+          "Kurzer Clip zur Demonstration von Gelenkverhalten, Steuerung und sauberer Bewegungsübertragung im Character-Setup.",
+        media: {
+          type: "video",
+          src: "./4th year/El Shal_Mohamed_Rig.mp4",
+          alt: "Rigging Demo Video",
+        },
+        tags: ["Rigging", "Controls", "Animation"],
+      },
+      {
+        id: "mimik-demo",
+        title: "Mimik Animation",
+        category: "Character",
+        description:
+          "Facial-Animation-Studie mit Fokus auf Ausdruck, Timing und der Übersetzung kleiner Formveränderungen in lesbare Emotion.",
+        media: {
+          type: "video",
+          src: "./4th year/El Shal_Mohamed_Mimik.mp4",
+          alt: "Mimik Animation Video",
+        },
+        tags: ["Facial Animation", "Expression", "Timing"],
+      },
+      {
+        id: "ncloth-flag",
+        title: "nCloth Flagge",
+        category: "Simulation",
+        description:
+          "Simulation einer Flagge als Übung für Stoffverhalten, Gewicht, Trägheit und glaubwürdige Reaktion auf Bewegung.",
+        media: {
+          type: "video",
+          src: "./4th year/El Shal_Mohamed_nClothFlagge.mp4",
+          alt: "nCloth Flaggenanimation",
+        },
+        tags: ["nCloth", "Simulation", "Dynamics"],
+      },
+    ],
+  },
+  {
+    id: "year-5",
+    yearNumber: "05",
+    label: "5. Jahr",
+    title: "Atmosphäre, Environment und ausgereiftere Inszenierung",
+    accent: "#786b59",
+    summary:
+      "Das 5. Jahr erweitert die technische Basis um stärkere Stimmung, klarere Szenografie und spezifischere Werkzeuge wie XGen. Viele Arbeiten setzen stärker auf cineastische Beleuchtung und räumliche Tiefe.",
+    skills: ["Environment", "XGen", "HDRI", "Lookdev"],
+    works: [
+      {
+        id: "final-stage",
+        title: "The Final Stage",
+        category: "Environment",
+        description:
+          "Eine atmosphärische Interiorszene mit starker Tiefenstaffelung, gezielter Lichtführung und klarer Materialtrennung zwischen Stein, Holz und Kerzenlicht.",
+        media: {
+          type: "image",
+          src: "./5th year/El Shal_Mohamed_TheFinalStage.jpg",
+          alt: "Dunkle Bibliotheks- oder Hallenszene mit Kerzenlicht",
+        },
+        tags: ["Environment Design", "Lighting", "Atmosphere"],
+        featured: true,
+      },
+      {
+        id: "xgen-study",
+        title: "XGen Study",
+        category: "Grooming",
+        description:
+          "Technische Studie zu Haar- und Fellverhalten mit Fokus auf Dichte, Führung und lesbarem Silhouettenaufbau.",
+        media: {
+          type: "image",
+          src: "./5th year/El Shal_Mohamed_XGen.jpg",
+          alt: "XGen-Studie zu Haar oder Fell",
+        },
+        tags: ["XGen", "Grooming", "Detail"],
+      },
+      {
+        id: "blobby-study",
+        title: "Blobby Study",
+        category: "Formstudie",
+        description:
+          "Verspielte Volumenarbeit mit weicheren Oberflächen und Fokus auf Materialgefühl, Formrhythmus und Lesbarkeit.",
+        media: {
+          type: "image",
+          src: "./5th year/El Shal_Mohamed_Blobby (1).png",
+          alt: "Organische Blobby-Studie",
+        },
+        tags: ["Forms", "Surface", "Experiment"],
+      },
+      {
+        id: "curves-hdri",
+        title: "Curves HDRI",
+        category: "Lighting",
+        description:
+          "Render mit geschwungener Linienführung und kontrollierter HDRI-Beleuchtung zur Untersuchung von Reflexionen und Raumwirkung.",
+        media: {
+          type: "image",
+          src: "./5th year/El Shal_Mohamed_CurvesHDRI.png",
+          alt: "HDRI-beleuchtete Curves-Szene",
+        },
+        tags: ["HDRI", "Lighting", "Reflections"],
+      },
+      {
+        id: "polster-scene",
+        title: "Polsterszene",
+        category: "Interior",
+        description:
+          "Innenraumszene mit Fokus auf Stoffigkeit, Volumen und einer ruhigeren, wohnlichen Lichtstimmung.",
+        media: {
+          type: "image",
+          src: "./5th year/El Shal_Mohamed_Polsterszene.jpg",
+          alt: "Gerenderte Polsterszene",
+        },
+        tags: ["Interior", "Materials", "Soft Surfaces"],
+      },
+      {
+        id: "development-stages",
+        title: "Entwicklungsstufen",
+        category: "Process",
+        description:
+          "Kurzer Prozessclip, der Zwischenschritte sichtbar macht und den Weg von der Rohform zur finaleren Szene dokumentiert.",
+        media: {
+          type: "video",
+          src: "./5th year/El Shal_Mohamed_Entwicklungsstufen.mp4",
+          alt: "Video der Entwicklungsstufen",
+        },
+        tags: ["Process", "Iteration", "Workflow"],
+      },
+      {
+        id: "portal-animation",
+        title: "Portal Animation",
+        category: "Motion",
+        description:
+          "Animierte Szene mit Fokus auf Timing, räumliche Wirkung und dem Kontrast zwischen statischer Umgebung und aktiver Energiequelle.",
+        media: {
+          type: "video",
+          src: "./5th year/El Shal_Mohamed_Portal.mp4",
+          alt: "Portal Animation Video",
+        },
+        tags: ["Animation", "FX", "Timing"],
+      },
+      {
+        id: "ufo-animation",
+        title: "UFO Animation",
+        category: "Motion",
+        description:
+          "Kurze Sequenz mit klarer Sci-Fi-Lesart, bei der Bewegung, Beleuchtung und Objektsilhouette die Szene tragen.",
+        media: {
+          type: "video",
+          src: "./5th year/El Shal_Mohamed_UFO.mp4",
+          alt: "UFO Animation Video",
+        },
+        tags: ["Sci-Fi", "Animation", "Mood"],
+      },
+    ],
+  },
+];
+
+window.PortfolioData = {
+  siteMeta,
+  projectYears,
+};

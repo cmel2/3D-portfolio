@@ -1,0 +1,167 @@
+.site-shell {
+  width: 100%;
+}
+
+.section {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: clamp(1.4rem, 3vw, 2.4rem) 0 clamp(2.8rem, 6vw, 5rem);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 20px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+}
+
+.site-brand,
+.site-nav a {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  padding-top: clamp(2rem, 6vw, 4rem);
+  align-items: end;
+}
+
+.hero__copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero__aside {
+  align-self: start;
+}
+
+.hero__title {
+  max-width: 11ch;
+  font-size: clamp(3.5rem, 9vw, 8.8rem);
+}
+
+.hero__intro {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.4vw, 1.24rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.section-head {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 78ch;
+  margin-bottom: 1.8rem;
+}
+
+.section-head h2 {
+  font-size: clamp(2.1rem, 4.6vw, 4.4rem);
+  max-width: 15ch;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.8fr);
+  gap: 1.2rem;
+}
+
+.about__text,
+.about__focus {
+  display: grid;
+  gap: 1rem;
+}
+
+.year-stack {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.year-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.year-section__intro {
+  position: sticky;
+  top: 92px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.toolset__panel {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.site-footer {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 0 2.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .about__layout,
+  .year-section {
+    grid-template-columns: 1fr;
+  }
+
+  .year-section__intro {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding-top: 14px;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+
+.playwright-cli/
+output/
+
+node_modules/
+dist/
+coverage/
+
+*.log
+.env
+.env.*
+
+.vscode/
+.idea/
