@@ -1,5 +1,5 @@
 (function registerPortfolioRenderer() {
-  const renderChip = (label) => `<span class="chip">${label}</span>`;
+  const renderChip = (label) => `<span class="chip tag">${label}</span>`;
 
   const assetUrl = (path) => encodeURI(path);
 
@@ -154,9 +154,9 @@
 
     return `
       <div class="download-card">
-        <p class="download-card__label">Datei</p>
-        <strong>${title}</strong>
-        <p>Technische Ergänzung zum Projekt als direkt nutzbare OBJ-Datei.</p>
+        <p class="download-card__label eyebrow">Datei</p>
+        <strong class="title-md">${title}</strong>
+        <p class="body-muted">Technische Ergänzung zum Projekt als direkt nutzbare OBJ-Datei.</p>
         <a class="button button--primary" href="${assetUrl(media.src)}" download>
           ${media.actionLabel || "Datei herunterladen"}
         </a>
@@ -173,9 +173,9 @@
           ${renderMedia(work.media, work.title)}
         </div>
         <div class="work-card__body">
-          <p class="work-card__kicker">${year.label} · ${work.category}</p>
-          <h3>${work.title}</h3>
-          <p>${work.description}</p>
+          <p class="work-card__kicker eyebrow">${year.label} · ${work.category}</p>
+          <h3 class="title-md">${work.title}</h3>
+          <p class="body-muted">${work.description}</p>
           <div class="tag-list">
             ${work.tags.map(renderChip).join("")}
           </div>
@@ -213,9 +213,9 @@
               }
             </div>
             <div class="software-card__body">
-              <p class="panel__eyebrow">${item.vendor}</p>
-              <h3>${item.name}</h3>
-              <p>${item.description}</p>
+              <p class="panel__eyebrow eyebrow">${item.vendor}</p>
+              <h3 class="title-md">${item.name}</h3>
+              <p class="body-muted">${item.description}</p>
             </div>
           </article>
         `,
@@ -235,9 +235,9 @@
             <div class="year-section__intro panel" data-reveal>
               <p class="year-section__number">${year.yearNumber}</p>
               <div>
-                <p class="panel__eyebrow">${year.label}</p>
-                <h3>${year.title}</h3>
-                <p>${year.summary}</p>
+                <p class="panel__eyebrow eyebrow">${year.label}</p>
+                <h3 class="title-lg">${year.title}</h3>
+                <p class="body-muted">${year.summary}</p>
                 <div class="chip-cloud">
                   ${year.skills.map(renderChip).join("")}
                 </div>

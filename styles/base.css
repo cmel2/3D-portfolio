@@ -1,10 +1,13 @@
 :root {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --bg: #f7f1e8;
   --bg-soft: rgba(255, 251, 244, 0.72);
   --panel: rgba(255, 250, 244, 0.86);
   --panel-strong: #fffaf3;
   --ink: #171412;
-  --muted: #6e655d;
+  --text-body: #302924;
+  --muted: #5e554d;
   --line: rgba(23, 20, 18, 0.12);
   --accent: #cf6c37;
   --accent-cool: #96adc6;
@@ -14,6 +17,14 @@
   --radius-md: 18px;
   --radius-sm: 999px;
   --content-width: min(1380px, calc(100vw - 32px));
+  --type-display-xl: clamp(2.35rem, 5.4vw, 4.6rem);
+  --type-display-lg: clamp(1.95rem, 4vw, 3.55rem);
+  --type-title-lg: clamp(1.72rem, 2.7vw, 2.72rem);
+  --type-title-md: clamp(1.24rem, 1.65vw, 1.82rem);
+  --type-eyebrow: clamp(0.72rem, 0.68rem + 0.16vw, 0.84rem);
+  --type-body: clamp(0.98rem, 0.94rem + 0.14vw, 1.06rem);
+  --type-body-muted: clamp(0.95rem, 0.91rem + 0.14vw, 1.02rem);
+  --type-tag: clamp(0.82rem, 0.79rem + 0.08vw, 0.9rem);
 }
 
 *,
@@ -30,7 +41,8 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 450;
   background:
     radial-gradient(circle at top left, rgba(150, 173, 198, 0.18), transparent 28%),
     radial-gradient(circle at 85% 15%, rgba(207, 108, 55, 0.14), transparent 24%),
@@ -79,8 +91,6 @@ select {
 
 p {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
 }
 
 h1,
@@ -88,10 +98,86 @@ h2,
 h3,
 h4 {
   margin: 0;
-  font-family: "Syne", sans-serif;
+  color: inherit;
+  font: inherit;
+}
+
+.display-xl,
+.display-lg,
+.title-lg,
+.title-md,
+.eyebrow,
+.body,
+.body-muted,
+.tag {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+.display-xl {
+  font-size: var(--type-display-xl);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.display-lg {
+  font-size: var(--type-display-lg);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.title-lg {
+  font-size: var(--type-title-lg);
+  font-weight: 750;
+  line-height: 1.01;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.title-md {
+  font-size: var(--type-title-md);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+.eyebrow {
+  font-size: var(--type-eyebrow);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 0.98;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.body,
+.body-muted {
+  max-width: 36ch;
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+
+.body {
+  color: var(--text-body);
+  font-size: var(--type-body);
+  font-weight: 450;
+}
+
+.body-muted {
+  color: var(--muted);
+  font-size: var(--type-body-muted);
+  font-weight: 450;
+}
+
+.tag {
+  font-size: var(--type-tag);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
 }
 
 ::selection {

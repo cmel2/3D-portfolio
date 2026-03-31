@@ -23,7 +23,7 @@
 
 .site-brand,
 .site-nav a {
-  font-size: 0.88rem;
+  font-size: var(--type-eyebrow);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -44,16 +44,15 @@
 }
 
 .intro-screen__content {
-  width: min(100%, 980px);
+  width: min(100%, 900px);
   text-align: center;
 }
 
 .intro-screen__content h1 {
   position: relative;
   display: inline-block;
-  font-size: clamp(2.15rem, 6.2vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.06em;
+  max-width: 10.8ch;
+  line-height: 0.94;
   transform: perspective(1200px) rotateX(18deg);
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.65),
@@ -74,14 +73,13 @@
 
 .section-head {
   display: grid;
-  gap: 0.8rem;
+  gap: 1rem;
   max-width: 78ch;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2.15rem;
 }
 
-.section-head h2 {
-  font-size: clamp(2.1rem, 4.6vw, 4.4rem);
-  max-width: 15ch;
+.section-head .display-lg {
+  max-width: 13ch;
 }
 
 .about__layout {
@@ -93,7 +91,7 @@
 .about__text,
 .about__focus {
   display: grid;
-  gap: 1rem;
+  gap: 1.35rem;
 }
 
 .year-stack {
@@ -121,7 +119,7 @@
 
 .toolset__panel {
   display: grid;
-  gap: 1.2rem;
+  gap: 1.35rem;
 }
 
 .software-grid {
@@ -167,6 +165,10 @@
 
   .intro-screen {
     min-height: calc(100vh - 40px);
+  }
+
+  .intro-screen__content {
+    width: min(100%, 94vw);
   }
 
   .work-grid {
