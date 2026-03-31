@@ -164,41 +164,6 @@
     `;
   };
 
-  const renderPortfolioMeta = (root, years) => {
-    if (!root) {
-      return;
-    }
-
-    const works = years.flatMap((year) => year.works);
-    const meta = [
-      { value: "3.-5.", label: "Jahrgang am TGM" },
-      { value: String(works.length), label: "Arbeiten" },
-      {
-        value: String(
-          works.filter((work) => work.media.type === "video").length,
-        ),
-        label: "Videoclips",
-      },
-      {
-        value: String(
-          works.filter((work) => work.media.type === "file").length,
-        ),
-        label: "OBJ-Downloads",
-      },
-    ];
-
-    root.innerHTML = meta
-      .map(
-        (item) => `
-          <article class="meta-card">
-            <span class="meta-card__value">${item.value}</span>
-            <span class="meta-card__label">${item.label}</span>
-          </article>
-        `,
-      )
-      .join("");
-  };
-
   const renderFocusAreas = (root, focusAreas) => {
     if (!root) {
       return;
@@ -284,7 +249,6 @@
 
   window.PortfolioRenderer = {
     renderFocusAreas,
-    renderPortfolioMeta,
     renderSoftware,
     renderToolset,
     renderYearSections,

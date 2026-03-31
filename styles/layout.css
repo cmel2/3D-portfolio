@@ -36,22 +36,22 @@
   justify-content: flex-end;
 }
 
-.portfolio__intro {
+.intro-screen {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.56fr);
-  gap: clamp(1.4rem, 4vw, 3rem);
-  align-items: center;
-  margin-bottom: clamp(2rem, 5vw, 4rem);
+  place-items: center;
+  padding-block: 0;
 }
 
-.portfolio__intro-copy {
-  display: grid;
-  gap: 1.2rem;
+.intro-screen__content {
+  width: min(100%, 980px);
+  text-align: center;
 }
 
-.portfolio__intro h1 {
-  max-width: 13ch;
-  font-size: clamp(2.8rem, 7vw, 6rem);
+.intro-screen__content h1 {
+  font-size: clamp(2.8rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
 }
 
 .section-head {
@@ -125,7 +125,6 @@
 }
 
 @media (max-width: 1080px) {
-  .portfolio__intro,
   .about__layout,
   .year-section {
     grid-template-columns: 1fr;
@@ -146,6 +145,10 @@
 
   .site-nav {
     justify-content: flex-start;
+  }
+
+  .intro-screen {
+    min-height: calc(100vh - 40px);
   }
 
   .work-grid {

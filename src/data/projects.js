@@ -64,7 +64,7 @@ const projectYears = [
     title: "Grundlagen in Form, Material und UV-Verständnis",
     accent: "#cf6c37",
     summary:
-      "Im 3. Jahrgang am TGM stehen Modellierung, Materialtests und klar lesbare Renderings im Vordergrund. Die Arbeiten zeigen technische Grundlagen, aber bereits ein Gespür für Licht, Kontrast und Präsentation.",
+      "Im 3. Jahrgang stehen Modellierung, Materialtests und klar lesbare Renderings im Vordergrund. Die Arbeiten zeigen technische Grundlagen, aber bereits ein Gespür für Licht, Kontrast und Präsentation.",
     skills: ["Tinkercad", "Modelling", "UV Mapping", "Shading"],
     works: [
       {
@@ -143,7 +143,7 @@ const projectYears = [
     title: "Bewegung, Charactertechnik und Simulation",
     accent: "#8ea9bf",
     summary:
-      "Im 4. Jahrgang am TGM verschiebt sich der Fokus von statischen Objekten zu animierten Abläufen. Rigging, Facial Animation und nCloth zeigen ein deutlich technischer werdendes Interesse.",
+      "Im 4. Jahrgang verschiebt sich der Fokus von statischen Objekten zu animierten Abläufen. Rigging, Facial Animation und nCloth zeigen ein deutlich technischer werdendes Interesse.",
     skills: ["Rigging", "Facial Animation", "nCloth", "Rendering"],
     works: [
       {
@@ -219,7 +219,7 @@ const projectYears = [
     title: "Atmosphäre, Environment und ausgereiftere Inszenierung",
     accent: "#786b59",
     summary:
-      "Der 5. Jahrgang am TGM erweitert die technische Basis um stärkere Stimmung, klarere Szenografie und spezifischere Werkzeuge wie XGen. Viele Arbeiten setzen stärker auf cineastische Beleuchtung und räumliche Tiefe.",
+      "Der 5. Jahrgang erweitert die technische Basis um stärkere Stimmung, klarere Szenografie und spezifischere Werkzeuge wie XGen. Viele Arbeiten setzen stärker auf cineastische Beleuchtung und räumliche Tiefe.",
     skills: ["Environment", "XGen", "HDRI", "Lookdev"],
     works: [
       {

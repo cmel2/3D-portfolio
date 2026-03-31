@@ -6,13 +6,11 @@
     return;
   }
 
-  const metaRoot = document.querySelector("#portfolio-meta");
   const aboutFocus = document.querySelector("#about-focus");
   const portfolioSections = document.querySelector("#portfolio-sections");
   const softwareGrid = document.querySelector("#software-grid");
   const footerTools = document.querySelector("#footer-tools");
 
-  portfolioRenderer.renderPortfolioMeta(metaRoot, portfolioData.projectYears);
   portfolioRenderer.renderFocusAreas(
     aboutFocus,
     portfolioData.siteMeta.focusAreas,

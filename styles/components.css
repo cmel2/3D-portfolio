@@ -51,54 +51,6 @@
   background: rgba(255, 255, 255, 0.45);
 }
 
-.portfolio__meta {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.85rem;
-}
-
-.meta-card {
-  display: grid;
-  gap: 0.2rem;
-  padding: 1rem;
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.34)),
-    rgba(255, 255, 255, 0.36);
-  border: 1px solid rgba(23, 20, 18, 0.08);
-}
-
-.meta-card__value {
-  font-family: "Syne", sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-}
-
-.meta-card__label {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.tgm-badge {
-  display: grid;
-  gap: 1rem;
-  align-items: center;
-  justify-items: start;
-  padding: 1.4rem;
-  border-radius: 26px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.48)),
-    var(--panel-strong);
-  border: 1px solid rgba(23, 20, 18, 0.08);
-}
-
-.tgm-badge img {
-  width: min(100%, 220px);
-  height: auto;
-  object-fit: contain;
-}
-
 .chip-cloud,
 .tag-list {
   display: flex;
@@ -406,10 +358,6 @@
 }
 
 @media (max-width: 720px) {
-  .portfolio__meta {
-    grid-template-columns: 1fr;
-  }
-
   .work-card,
   .work-card--featured {
     grid-column: span 1;
