@@ -25,6 +25,7 @@
   );
   portfolioRenderer.renderToolset(footerTools, portfolioData.projectYears);
 
+  window.setupObjectViewers();
   window.setupMediaExperience();
   window.setupRevealOnScroll(document.querySelectorAll("[data-reveal]"));
 })();

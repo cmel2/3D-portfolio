@@ -39,7 +39,9 @@
       <main id="top">
         <section class="intro-screen section">
           <div class="intro-screen__content" data-reveal>
-            <h1>3D Portfolio 2023-2026 Mohamed El Shal</h1>
+            <h1 data-title="3D Portfolio 2023-2026 Mohamed El Shal">
+              3D Portfolio 2023-2026 Mohamed El Shal
+            </h1>
           </div>
         </section>
 
@@ -134,8 +136,22 @@
       </div>
     </div>
 
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/OBJLoader.js"
+    ></script>
     <script defer src="./src/data/projects.js"></script>
+    <script defer src="./src/data/chesspieceObj.js"></script>
     <script defer src="./src/modules/renderPortfolio.js"></script>
+    <script defer src="./src/modules/objectViewer.js"></script>
     <script defer src="./src/modules/mediaExperience.js"></script>
     <script defer src="./src/modules/revealOnScroll.js"></script>
     <script defer src="./src/main.js"></script>

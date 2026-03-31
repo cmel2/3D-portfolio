@@ -123,14 +123,14 @@ const projectYears = [
       {
         id: "chesspiece-obj",
         title: "Schachfigur aus Tinkercad",
-        category: "3D-Modell",
+        category: "OBJ Viewer",
         description:
-          "Exportierte Grundform als OBJ-Datei. Die Arbeit ergänzt das Schach-Projekt um eine direkt nachvollziehbare Modellbasis.",
+          "Interaktive Ansicht der exportierten Grundform. Die Figur lässt sich direkt im Browser drehen und zoomen und ergänzt das Schach-Projekt um eine nachvollziehbare Modellbasis.",
         media: {
-          type: "file",
+          type: "model",
           src: "./3th year/Chesspiece_Tinkercad.obj",
           alt: "OBJ-Datei einer Schachfigur aus Tinkercad",
-          actionLabel: "OBJ herunterladen",
+          modelKey: "chesspieceObj",
         },
         tags: ["OBJ", "Tinkercad", "Base Mesh"],
       },

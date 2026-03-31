@@ -132,6 +132,26 @@
       `;
     }
 
+    if (media.type === "model") {
+      return `
+        <div
+          class="obj-viewer"
+          data-obj-viewer
+          data-obj-key="${media.modelKey}"
+          data-obj-src="${assetUrl(media.src)}"
+        >
+          <div class="obj-viewer__canvas" role="img" aria-label="${media.alt || title}"></div>
+          <div class="obj-viewer__hud">
+            <strong>OBJ Viewer</strong>
+            <span>Ziehen zum Drehen · Scrollen zum Zoomen</span>
+          </div>
+          <a class="obj-viewer__download" href="${assetUrl(media.src)}" download>
+            OBJ herunterladen
+          </a>
+        </div>
+      `;
+    }
+
     return `
       <div class="download-card">
         <p class="download-card__label">Datei</p>
