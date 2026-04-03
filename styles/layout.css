@@ -41,34 +41,12 @@
   display: grid;
   place-items: center;
   padding-block: 0;
+  perspective: 2200px;
+  overflow: clip;
 }
 
 .intro-screen__content {
-  width: min(100%, 900px);
-  text-align: center;
-}
-
-.intro-screen__content h1 {
-  position: relative;
-  display: inline-block;
-  max-width: 10.8ch;
-  line-height: 0.94;
-  transform: perspective(1200px) rotateX(18deg);
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.65),
-    0 2px 0 rgba(230, 223, 214, 0.9),
-    0 3px 0 rgba(222, 213, 201, 0.8),
-    0 18px 34px rgba(23, 20, 18, 0.14);
-}
-
-.intro-screen__content h1::after {
-  content: attr(data-title);
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: translate3d(10px, 14px, -1px);
-  color: rgba(207, 108, 55, 0.22);
-  filter: blur(1px);
+  width: min(100%, 1120px);
 }
 
 .section-head {
